@@ -1,0 +1,43 @@
+body{
+	background-image: url(../img/stBg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+.hero{
+	width: 600px;
+	height: 100%;
+	margin: 0 auto;
+
+}
+
+.person{
+	width: 400px;
+	height: 100px;
+	font-family: Arial serif;
+	font-weight: bold;
+	color: white;
+	font-size: 24px;
+	line-height:100px;
+	margin: 0 auto;
+	padding-left: 30px;
+	text-transform: uppercase;
+
+}
+.likeHero{
+	height: 100px;
+	width: auto;
+	float: right;
+}
+
+.person:hover{
+	padding-left: 120px;
+	transform: scale(1.5);
+	
+-moz-transition: 1.5s all;
+   -webkit-transition: 1.5s all;
+     -o-transition: 1.5s all;
+        transition: 1.5s all;	
+
+}
