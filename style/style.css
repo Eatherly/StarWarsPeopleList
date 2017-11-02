@@ -29,10 +29,11 @@ body{
 	height: 100px;
 	width: auto;
 	float: right;
+	display: none;
 }
 
 .person:hover{
-	padding-left: 120px;
+	
 	transform: scale(1.5);
 	
 -moz-transition: 1.5s all;
@@ -41,3 +42,8 @@ body{
         transition: 1.5s all;	
 
 }
+
+.Darth , .Luke {
+	display: block;
+}
+

@@ -14,23 +14,45 @@ function clickToHero()  {
                localStorage.setItem( "choseHero", $(".hero").html());
        
     });
-}
+};
 
+function Storage(url){
 
   if(localStorage.getItem('choseHero') != (null)){
        $(".hero").html(localStorage.getItem('choseHero'));
        clickToHero();
        }
 
-  else $.getJSON("https://swapi.co/api/people/?format=json" , function(data) { 
+  else $.getJSON(url , function(data) { 
            let list=data.results;
-           let hero="";
+           let hero=""; 
            $.each(list,  function(key , val){
-               hero += "<div class='person'> <img src='img/dart.jpg' class='likeHero' id='"+val.name+"'>"+val.name+"</div>" ;
+               hero += "<div class='person'> <img src='img/dart.jpg' class='likeHero "+val.name+"'>"+val.name+"</div>" ;
            });    
            
            $(".hero").html(hero);
            clickToHero();
         });
+
+};
+
+
+
+
+var xmlhttp = new XMLHttpRequest();
+var url = "https://swapi.co/api/people/?format=json";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       Storage(url);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
+
+
+
     
    
